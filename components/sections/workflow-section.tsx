@@ -16,10 +16,10 @@ const WORKFLOW_THEME_STYLE = {
   "--color-card": "#ffffff",
   "--color-muted-foreground": "#74716c",
   "--color-border": "#d9d6d0",
-  "--color-primary": "#ff7a2f",
+  "--color-primary": "#16a34a",
   "--color-primary-foreground": "#ffffff",
   "--color-chart-2": "#171717",
-  "--color-chart-3": "#d97706",
+  "--color-chart-3": "#15803d",
 } as CSSProperties;
 
 export function WorkflowSection() {

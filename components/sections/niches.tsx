@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Building2,
   HeartPulse,
-  ImagePlus,
   ShoppingBag,
   Wrench,
 } from "lucide-react";
@@ -74,12 +74,15 @@ export function NichesSection() {
                   )}
                 >
                   <div>
-                    {/* Espaço reservado para imagem em cima do card */}
-                    <div className="flex aspect-[16/9] w-full flex-col items-center justify-center border-b border-dashed border-(color:--color-n3-line) bg-(color:--color-n3-page) px-4 text-center">
-                      <ImagePlus className="h-6 w-6 text-(color:--color-n3-accent)" aria-hidden="true" />
-                      <span className="mt-1.5 text-[11px] font-medium text-(color:--color-n3-grey)">
-                        Espaço para imagem · {niche.name}
-                      </span>
+                    {/* Imagem do nicho */}
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-(color:--color-n3-line) bg-(color:--color-n3-page)">
+                      <Image
+                        src={`/images/niche-${niche.id}.jpg`}
+                        alt={niche.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover"
+                      />
                     </div>
 
                     <div className="p-5 pb-0">

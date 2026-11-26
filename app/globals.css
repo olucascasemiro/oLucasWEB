@@ -5,7 +5,7 @@
   --color-n3-ink: #171717;
   --color-n3-grey: #74716c;
   --color-n3-line: #d9d6d0;
-  --color-n3-accent: #ff7a2f;
+  --color-n3-accent: #16a34a;
   --n3-nav-space: 72px;
   /* Onest via @fontsource-variable/onest – auto-hosted, no Google Fonts call */
   --font-n3-sans: "Onest Variable", system-ui, -apple-system, sans-serif;
@@ -23,7 +23,7 @@
     background-color: var(--color-n3-page);
     background-image: radial-gradient(
       ellipse 80% 50% at 50% -10%,
-      rgba(255, 122, 47, 0.08),
+      rgba(22, 163, 74, 0.07),
       transparent 70%
     );
     color: var(--color-n3-ink);

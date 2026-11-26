@@ -22,7 +22,7 @@ const STYLES = `.gradient-blinds-container {
   --cta-void: #050506;
   --cta-ink: #0a0a0b;
   --cta-paper: #f8f7f3;
-  --cta-signal: #ff7a2f;
+  --cta-signal: #16a34a;
   --cta-signal-soft: color-mix(in srgb, var(--cta-signal) 72%, white);
 
   position: relative;
@@ -968,7 +968,7 @@ export default function FinalCtaBanner({
   primaryHref = "https://wa.me/",
   secondaryLabel = "Ver segmentos",
   secondaryHref = "#nichos",
-  gradientColors = ["#ff7a2f", "#d95b16", "#4a1d06", "#171717"],
+  gradientColors = ["#22c55e", "#16a34a", "#052e16", "#0a0a0b"],
   className = "",
 }: FinalCtaBannerProps) {
   useInjectStyles();

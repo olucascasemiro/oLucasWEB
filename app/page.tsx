@@ -1,5 +1,6 @@
 import React from "react";
-import { Navbar } from "@/components/sections/navbar";
+import Navbar2 from "@/components/ui/navbar2";
+import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 import { Hero } from "@/components/sections/hero";
 import { NichesSection } from "@/components/sections/niches";
 import { WorkflowSection } from "@/components/sections/workflow-section";
@@ -9,8 +10,8 @@ import { CtaFooter } from "@/components/sections/cta-footer";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
+    <div className="flex min-h-screen flex-col pb-16 md:pb-0">
+      <Navbar2 />
       <main className="flex-1">
         <Hero />
         <NichesSection />
@@ -19,6 +20,7 @@ export default function HomePage() {
         <HowIWorkSection />
       </main>
       <CtaFooter />
+      <FloatingWhatsApp />
     </div>
   );
 }
