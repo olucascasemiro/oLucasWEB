@@ -2,10 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import FinalCtaBanner from "@/components/ui/final-cta-banner";
 import { Reveal } from "@/components/ui/reveal";
 import { siteConfig, waLink } from "@/lib/site";
-import { track } from "@/lib/track";
 
 export function CtaFooter() {
   const year = new Date().getFullYear();
@@ -15,26 +14,15 @@ export function CtaFooter() {
       <section id="contato" className="py-10 sm:py-12 lg:py-14">
         <div className="n3-container">
           <Reveal>
-            <div className="rounded-3xl bg-(color:--color-n3-ink) px-7 py-10 text-center text-(color:--color-n3-page) shadow-sm sm:px-12 sm:py-14">
-            <h2 className="mx-auto max-w-2xl text-2xl font-semibold tracking-tight sm:text-4xl">
-              {siteConfig.cta.title}
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base text-(color:--color-n3-page)/75 sm:text-lg">
-              {siteConfig.cta.subtitle}
-            </p>
-            <div className="mt-8 flex justify-center">
-              <a
-                href={waLink(siteConfig.cta.whatsappText)}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track("whatsapp_click", { origin: "cta_final" })}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-(color:--color-n3-accent) px-7 text-sm font-semibold text-(color:--color-n3-ink) transition-transform hover:-translate-y-0.5 sm:text-base"
-              >
-                <span>{siteConfig.cta.buttonLabel}</span>
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </div>
-            </div>
+            <FinalCtaBanner
+              eyebrow="Próximo passo"
+              heading={siteConfig.cta.title}
+              body={siteConfig.cta.subtitle}
+              primaryLabel={siteConfig.cta.buttonLabel}
+              primaryHref={waLink(siteConfig.cta.whatsappText)}
+              secondaryLabel="Ver segmentos"
+              secondaryHref="#nichos"
+            />
           </Reveal>
         </div>
       </section>

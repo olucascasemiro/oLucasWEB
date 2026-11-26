@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { waLink } from "@/lib/site";
+import FinalCtaBanner from "@/components/ui/final-cta-banner";
 import "./saude.css";
 
 const FAQ_ITEMS = [
@@ -91,13 +92,20 @@ export default function SaudePage() {
             <Link
               href="/"
               style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
                 fontSize: "0.78rem",
-                color: "var(--text-secondary)",
-                borderLeft: "1px solid var(--border-subtle)",
-                paddingLeft: "14px",
+                fontWeight: 600,
+                color: "var(--text-primary)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: "999px",
+                padding: "6px 12px",
+                background: "rgba(255,255,255,0.04)",
+                textDecoration: "none",
               }}
             >
-              ← Portfólio
+              ← Voltar para o Hub
             </Link>
           </div>
 
@@ -700,6 +708,19 @@ export default function SaudePage() {
             </div>
           </div>
         </section>
+
+        <div style={{ padding: "2.5rem 1.25rem 3.5rem", maxWidth: "76rem", marginInline: "auto" }}>
+          <FinalCtaBanner
+            eyebrow="CONVERT IA · Saúde"
+            heading="Pronto para estruturar o atendimento da sua clínica?"
+            body="Agende um diagnóstico gratuito de 20 minutos para mapear onde sua equipe perde contatos hoje."
+            primaryLabel="Agendar diagnóstico gratuito"
+            primaryHref={waLink("Oi, vim pela página de Saúde e quero agendar meu diagnóstico gratuito de 20 minutos.")}
+            secondaryLabel="Voltar para o Hub"
+            secondaryHref="/"
+            gradientColors={["#16a34a", "#15803d", "#052e16", "#0a0a0b"]}
+          />
+        </div>
       </main>
 
       {/* FOOTER */}
