@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initNavSpy();
   initFaqAccordion();
-  initMethodologyAnimation();
-  initHeroChatSimulation();
+  initRoiCalculator();
+  initLeadForm();
+  initPrivacyModal();
 });
 
 /* ==========================================================================
@@ -78,8 +79,8 @@ function initScrollReveal() {
       });
     },
     {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -30px 0px'
     }
   );
 
@@ -111,7 +112,7 @@ function initNavSpy() {
       });
     },
     {
-      threshold: 0.35,
+      threshold: 0.3,
       rootMargin: '-80px 0px -50% 0px'
     }
   );
@@ -134,7 +135,6 @@ function initFaqAccordion() {
     question.addEventListener('click', () => {
       const isExpanded = question.getAttribute('aria-expanded') === 'true';
 
-      // Close all other items for a clean single-open behavior
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           const otherQ = otherItem.querySelector('.faq-question');
@@ -147,7 +147,6 @@ function initFaqAccordion() {
         }
       });
 
-      // Toggle current item
       question.setAttribute('aria-expanded', !isExpanded);
       answer.classList.toggle('open', !isExpanded);
       item.classList.toggle('open', !isExpanded);
@@ -156,49 +155,77 @@ function initFaqAccordion() {
 }
 
 /* ==========================================================================
-   06. METHODOLOGY TRACK ANIMATION
+   06. ROI / LOST REVENUE CALCULATOR
    ========================================================================== */
-function initMethodologyAnimation() {
-  const track = document.querySelector('.steps-track');
-  if (!track) return;
+function initRoiCalculator() {
+  const leadsInput = document.getElementById('calc-leads');
+  const ticketInput = document.getElementById('calc-ticket');
+  const leadsVal = document.getElementById('calc-leads-val');
+  const ticketVal = document.getElementById('calc-ticket-val');
+  const lostPatientsEl = document.getElementById('calc-lost-patients');
+  const lostMoneyEl = document.getElementById('calc-lost-money');
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          track.classList.add('animated');
-          observer.unobserve(track);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  if (!leadsInput || !ticketInput) return;
 
-  observer.observe(track);
+  const updateCalc = () => {
+    const leads = parseInt(leadsInput.value, 10) || 200;
+    const ticket = parseInt(ticketInput.value, 10) || 300;
+    const lostPatients = Math.round(leads * 0.3);
+    const lostRevenue = lostPatients * ticket;
+
+    leadsVal.textContent = `${leads} contatos`;
+    ticketVal.textContent = `R$ ${ticket.toLocaleString('pt-BR')}`;
+    lostPatientsEl.textContent = `${lostPatients} pacientes/mês`;
+    lostMoneyEl.innerHTML = `R$ ${lostRevenue.toLocaleString('pt-BR')}<span>/mês</span>`;
+  };
+
+  leadsInput.addEventListener('input', updateCalc);
+  ticketInput.addEventListener('input', updateCalc);
+  updateCalc();
 }
 
 /* ==========================================================================
-   07. HERO CHAT SIMULATION (Subtle periodic typing loop)
+   07. LEAD QUALIFICATION FORM -> WHATSAPP
    ========================================================================== */
-function initHeroChatSimulation() {
-  const chatMock = document.querySelector('.chat-mock');
-  if (!chatMock) return;
+function initLeadForm() {
+  const form = document.getElementById('lead-qualify-form');
+  if (!form) return;
 
-  const msgs = chatMock.querySelectorAll('.chat-msg');
-  const chip = chatMock.querySelector('.chat-status-chip');
-  if (!msgs.length) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('lead-name').value.trim();
+    const clinic = document.getElementById('lead-clinic').value.trim();
+    const specialty = document.getElementById('lead-specialty').value;
+    const volume = document.getElementById('lead-volume').value;
 
-  let step = 0;
-  function cycleSimulation() {
-    msgs.forEach((m, idx) => {
-      m.style.opacity = '1';
-      m.style.transform = 'translateY(0)';
-    });
+    const text = `Oi Lucas, vim pelo site da CONVERT IA e quero agendar meu diagnóstico gratuito de 20 min.\n\n*Nome:* ${name}\n*Clínica:* ${clinic}\n*Especialidade:* ${specialty}\n*Volume:* ${volume} mensagens/mês`;
+    const url = `https://wa.me/5511915735039?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener');
+  });
+}
 
-    if (chip) {
-      chip.style.opacity = '1';
-    }
-  }
+/* ==========================================================================
+   08. PRIVACY & LGPD MODAL
+   ========================================================================== */
+function initPrivacyModal() {
+  const modal = document.getElementById('privacy-modal');
+  const openBtn = document.getElementById('open-privacy-modal');
+  const closeBtn = document.getElementById('close-privacy-modal');
+  const backdrop = document.getElementById('privacy-backdrop');
 
-  cycleSimulation();
+  if (!modal || !openBtn) return;
+
+  const openModal = () => {
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+  };
+
+  openBtn.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
 }

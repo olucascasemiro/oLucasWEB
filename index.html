@@ -3,12 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CONVERT IA — Atendimento inteligente para clínicas e consultórios</title>
-  <meta name="description" content="Tecnologia que transforma atendimento em oportunidades. Soluções inteligentes para clínicas e consultórios organizarem atendimento e acompanharem cada oportunidade." />
+  <title>CONVERT IA | Automação de Atendimento no WhatsApp para Clínicas</title>
+  <meta name="description" content="Automação de atendimento para clínicas e consultórios. Responda todo contato em menos de 1 minuto no WhatsApp e Instagram, organize pacientes e acompanhe agendamentos com LGPD." />
+  <link rel="canonical" href="https://olucasweb-liard.vercel.app/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CONVERT IA | Automação de Atendimento para Clínicas" />
+  <meta property="og:description" content="Responda todo contato em menos de 1 minuto, 24h por dia, e saiba quantos viraram consulta. Tecnologia estruturada para clínicas e consultórios." />
+  <meta property="og:url" content="https://olucasweb-liard.vercel.app/" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23B7F36B'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='18' fill='%230D1116'%3EC%3C/text%3E%3C/svg%3E" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "CONVERT IA",
+        "url": "https://olucasweb-liard.vercel.app/",
+        "description": "Automação de atendimento e triagem no WhatsApp para clínicas e consultórios."
+      },
+      {
+        "@type": "Service",
+        "name": "Automação de Atendimento para Clínicas",
+        "provider": {
+          "@type": "Organization",
+          "name": "CONVERT IA"
+        },
+        "areaServed": "BR",
+        "description": "Implementação de atendimento inicial inteligente, organização de leads e acompanhamento de agendamentos para clínicas."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O CONVERT IA substitui a recepcionista?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. A solução apoia tarefas iniciais e repetitivas, organiza informações e encaminha solicitações. A equipe humana continua responsável pelos atendimentos que exigem análise, decisão ou cuidado individual."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A inteligência artificial responde dúvidas médicas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O escopo é estritamente administrativo. A solução não diagnostica, interpreta sintomas, recomenda tratamentos ou substitui profissionais de saúde."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como os dados dos pacientes são protegidos (LGPD)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Os dados trafegam com criptografia, ficam isolados na infraestrutura da clínica e nunca são utilizados para treinar modelos públicos de IA."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -23,15 +89,16 @@
       </a>
 
       <nav class="main-nav" aria-label="Navegação principal">
-        <a href="#solucao" class="nav-link">Solução</a>
-        <a href="#metodologia" class="nav-link">Como Funciona</a>
-        <a href="#precos" class="nav-link">Investimento</a>
+        <a href="#problema" class="nav-link">Diagnóstico</a>
+        <a href="#solucao" class="nav-link">Como Funciona</a>
+        <a href="#quem-somos" class="nav-link">Quem Somos</a>
+        <a href="#precos" class="nav-link">Planos</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
 
       <div class="header-cta">
-        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
-          Falar no WhatsApp
+        <a href="https://wa.me/5511915735039?text=Oi%2C%20vim%20pelo%20site%20e%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito%20de%2020%20minutos." target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+          Diagnóstico Gratuito
         </a>
       </div>
 
@@ -42,12 +109,13 @@
 
     <!-- Mobile nav -->
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-      <a href="#solucao" class="mobile-nav-link">Solução</a>
-      <a href="#metodologia" class="mobile-nav-link">Como Funciona</a>
-      <a href="#precos" class="mobile-nav-link">Investimento</a>
+      <a href="#problema" class="mobile-nav-link">Diagnóstico</a>
+      <a href="#solucao" class="mobile-nav-link">Como Funciona</a>
+      <a href="#quem-somos" class="mobile-nav-link">Quem Somos</a>
+      <a href="#precos" class="mobile-nav-link">Planos</a>
       <a href="#faq" class="mobile-nav-link">FAQ</a>
-      <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary mobile-nav-cta">
-        Falar no WhatsApp
+      <a href="https://wa.me/5511915735039?text=Oi%2C%20vim%20pelo%20site%20e%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito%20de%2020%20minutos." target="_blank" rel="noopener" class="btn btn-primary mobile-nav-cta">
+        Diagnóstico Gratuito
       </a>
     </div>
   </header>
@@ -65,34 +133,32 @@
           <div class="hero-content">
             <div class="hero-eyebrow reveal">
               <span class="eyebrow-dot"></span>
-              <span>Tecnologia para clínicas e consultórios</span>
+              <span>Automação de atendimento no WhatsApp para clínicas</span>
             </div>
 
             <h1 class="hero-title reveal">
-              Seu próximo cliente<br />
+              Seu próximo paciente<br />
               pode estar esperando<br />
               <span class="text-accent">uma resposta.</span>
             </h1>
 
             <p class="hero-subtitle reveal">
-              Sua clínica recebe contatos pelo WhatsApp e Instagram, mas nem sempre consegue
-              responder, organizar e acompanhar cada oportunidade?
+              <strong>Responda todo contato em menos de 1 minuto, 24h por dia, e saiba quantos viraram consulta.</strong>
             </p>
 
             <p class="hero-body reveal">
-              Implementamos soluções inteligentes para ajudar clínicas e consultórios a estruturar o atendimento,
-              registrar interessados e acompanhar solicitações com mais organização.
+              Sua clínica recebe mensagens pelo WhatsApp e Instagram, mas nem sempre consegue responder na hora e acompanhar cada interessado? Estruturamos o atendimento inicial para sua equipe não perder oportunidades.
             </p>
 
             <div class="hero-tags reveal">
-              <span class="tag">Atendimento organizado</span>
-              <span class="tag">Processos conectados</span>
-              <span class="tag">Mais controle sobre as oportunidades</span>
+              <span class="tag">Resposta imediata 24h</span>
+              <span class="tag">Triagem administrativa</span>
+              <span class="tag">Conformidade LGPD</span>
             </div>
 
             <div class="hero-actions reveal">
-              <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-                Quero avaliar meu atendimento
+              <a href="https://wa.me/5511915735039?text=Oi%2C%20vim%20pelo%20site%20e%20quero%20avaliar%20meu%20atendimento%20no%20diagn%C3%B3stico%20gratuito%20de%2020%20min." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                Agendar diagnóstico gratuito (20 min)
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
@@ -109,22 +175,22 @@
               <div class="chat-body">
                 <div class="chat-msg incoming">
                   <p>Olá! Gostaria de agendar uma consulta para esta semana.</p>
-                  <span class="chat-time">09:14</span>
+                  <span class="chat-time">21:14</span>
                 </div>
                 <div class="chat-msg outgoing animate-typing">
-                  <p>Olá! Obrigado pelo contato. 😊 Qual especialidade você está buscando?</p>
-                  <span class="chat-time">09:14</span>
+                  <p>Olá! Obrigado pelo contato. Qual especialidade ou procedimento você está buscando?</p>
+                  <span class="chat-time">21:14</span>
                 </div>
                 <div class="chat-msg incoming">
                   <p>Dermatologia.</p>
-                  <span class="chat-time">09:15</span>
+                  <span class="chat-time">21:15</span>
                 </div>
                 <div class="chat-msg outgoing">
-                  <p>Perfeito! Vou registrar seu interesse e encaminhar para nossa equipe. Qual o melhor horário para você?</p>
-                  <span class="chat-time">09:15</span>
+                  <p>Perfeito! Já registrei seu interesse. Você prefere atendimento pela manhã ou à tarde? Nossa equipe confirma o horário na agenda.</p>
+                  <span class="chat-time">21:15</span>
                 </div>
                 <div class="chat-status-row">
-                  <span class="chat-status-chip">✓ Contato registrado · Equipe notificada</span>
+                  <span class="chat-status-chip">✓ Lead qualificado · Encaminhado para recepção</span>
                 </div>
               </div>
             </div>
@@ -136,7 +202,7 @@
     </section>
 
     <!-- ====================================================================
-         PROBLEMA — SEÇÃO EM BRANCO (O DIAGNÓSTICO EM BLOCOS)
+         PROBLEMA + CALCULADORA DE RECEITA PERDIDA (SEÇÃO EM BRANCO)
          ==================================================================== -->
     <section class="section problems-section section-white" id="problema">
       <div class="container">
@@ -144,12 +210,12 @@
         <div class="section-header reveal">
           <p class="section-label">O DIAGNÓSTICO</p>
           <h2 class="section-title">
-            O problema não é apenas<br />
-            receber contatos. É conseguir<br />
-            <span class="text-accent-dark">acompanhar cada um deles.</span>
+            O problema não é falta de demanda.<br />
+            É perder pacientes por<br />
+            <span class="text-accent-dark">demora no primeiro contato.</span>
           </h2>
           <p class="section-subtitle">
-            Quando o volume de mensagens cresce sem uma estrutura conectada, oportunidades valiosas se perdem pelo caminho.
+            Quando o volume de mensagens cresce sem uma estrutura conectada, sua clínica deixa receita na mesa todos os dias.
           </p>
         </div>
 
@@ -164,7 +230,7 @@
               <span class="problem-step-badge">[ 01 ]</span>
             </div>
             <h3 class="problem-title">Mensagens fora do horário</h3>
-            <p class="problem-desc">Contatos chegam à noite e nos finais de semana, ficando sem resposta até o próximo dia útil — momento em que o potencial paciente já procurou outra opção.</p>
+            <p class="problem-desc">Contatos chegam à noite e nos finais de semana, ficando sem resposta até o dia seguinte — momento em que o paciente já agendou em outro lugar.</p>
           </div>
 
           <!-- Bloco 02 -->
@@ -176,7 +242,7 @@
               <span class="problem-step-badge">[ 02 ]</span>
             </div>
             <h3 class="problem-title">Interessados sem retorno</h3>
-            <p class="problem-desc">Pessoas que demonstraram interesse real ficam sem follow-up porque a recepção não possui visibilidade de quais conversas ainda estão em aberto.</p>
+            <p class="problem-desc">Pessoas que pediram informações ficam sem follow-up porque a recepção não consegue acompanhar quais conversas ainda estão em aberto.</p>
           </div>
 
           <!-- Bloco 03 -->
@@ -188,7 +254,7 @@
               <span class="problem-step-badge">[ 03 ]</span>
             </div>
             <h3 class="problem-title">Informações espalhadas</h3>
-            <p class="problem-desc">Dados dispersos entre conversas de WhatsApp, planilhas e anotações avulsas, impedindo um histórico seguro e centralizado de cada atendimento.</p>
+            <p class="problem-desc">Dados dispersos entre conversas de WhatsApp, planilhas e anotações avulsas, impedindo um histórico claro de cada solicitação.</p>
           </div>
 
           <!-- Bloco 04 -->
@@ -200,7 +266,7 @@
               <span class="problem-step-badge">[ 04 ]</span>
             </div>
             <h3 class="problem-title">Equipe sobrecarregada</h3>
-            <p class="problem-desc">Recepcionistas ocupam grande parte do dia respondendo às mesmas dúvidas básicas, reduzindo a dedicação a quem já está fisicamente na clínica.</p>
+            <p class="problem-desc">Recepcionistas ocupam horas respondendo às mesmas dúvidas básicas (endereço, convênios, valores), tirando foco de quem está na clínica.</p>
           </div>
 
           <!-- Bloco 05 -->
@@ -212,251 +278,230 @@
               <span class="problem-step-badge">[ 05 ]</span>
             </div>
             <h3 class="problem-title">Sem visibilidade do funil</h3>
-            <p class="problem-desc">Gestores não conseguem mensurar quantos contatos chegaram, quantos foram convertidos em agendamentos e onde as oportunidades são perdidas.</p>
+            <p class="problem-desc">Gestores não sabem quantos contatos chegaram no mês, quantos viraram consultas reais e onde os pacientes estão sendo perdidos.</p>
           </div>
 
         </div>
 
-        <div class="problem-conclusion reveal">
-          <p>Sua equipe precisa de processos claros e ferramentas que <strong>ajudem no trabalho</strong> — não de mais um sistema complicado.</p>
+        <!-- Mini Calculadora Interativa de Receita Perdida -->
+        <div class="roi-calculator reveal" id="calculadora">
+          <div class="roi-header">
+            <span class="roi-badge">SIMULADOR DE IMPACTO FINANCEIRO</span>
+            <h3>Quanto sua clínica pode estar deixando na mesa por mês?</h3>
+            <p>Ajuste os números abaixo para estimar a receita perdida por demora ou falta de acompanhamento (estimativa conservadora de 30% de perda).</p>
+          </div>
+
+          <div class="roi-grid">
+            <div class="roi-inputs">
+              <div class="roi-field">
+                <div class="roi-label-row">
+                  <label for="calc-leads">Contatos recebidos por mês</label>
+                  <span class="roi-val-display" id="calc-leads-val">200 contatos</span>
+                </div>
+                <input type="range" id="calc-leads" min="50" max="1000" step="10" value="200" />
+              </div>
+
+              <div class="roi-field">
+                <div class="roi-label-row">
+                  <label for="calc-ticket">Ticket médio por consulta/procedimento</label>
+                  <span class="roi-val-display" id="calc-ticket-val">R$ 300</span>
+                </div>
+                <input type="range" id="calc-ticket" min="100" max="3000" step="50" value="300" />
+              </div>
+            </div>
+
+            <div class="roi-result-box">
+              <span class="roi-result-label">Perda estimada (30% sem retorno ágil)</span>
+              <div class="roi-result-patients" id="calc-lost-patients">60 pacientes/mês</div>
+              <div class="roi-result-money" id="calc-lost-money">R$ 18.000<span>/mês</span></div>
+              <p class="roi-result-note">Recuperar apenas uma fração desses contatos já paga todo o sistema.</p>
+            </div>
+          </div>
         </div>
 
       </div>
     </section>
 
     <!-- ====================================================================
-         SOLUÇÃO — CONVERT IA
+         SOLUÇÃO + COMO FUNCIONA UNIFICADOS (SEÇÃO ESCURA)
          ==================================================================== -->
     <section class="section solution-section" id="solucao">
       <div class="container">
 
         <div class="solution-header reveal">
-          <p class="section-label">A SOLUÇÃO</p>
+          <p class="section-label">COMO FUNCIONA NA PRÁTICA</p>
           <h2 class="section-title">
-            Conheça o <span class="text-accent">CONVERT IA</span>
+            O que entra, o que o <span class="text-accent">CONVERT IA</span> faz<br />
+            e o que sua equipe recebe.
           </h2>
-          <p class="solution-subtitle">
-            Atendimento inteligente para clínicas e consultórios.
-          </p>
           <p class="solution-desc">
-            O CONVERT IA combina inteligência artificial, automações e organização de processos para apoiar o atendimento inicial e o acompanhamento de interessados.
+            Sem substituir sua recepção. A tecnologia filtra, responde dúvidas administrativas e entrega o paciente pronto para sua equipe concluir.
           </p>
         </div>
 
+        <!-- Fluxo em 3 Estágios Claros -->
+        <div class="pipeline-flow">
+          <div class="pipeline-card reveal">
+            <span class="pipeline-step">01 / ENTRADA</span>
+            <h3>O paciente chama</h3>
+            <p>Contato chega pelo WhatsApp ou Instagram DM a qualquer hora do dia ou da noite.</p>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-card reveal">
+            <span class="pipeline-step">02 / AÇÃO DA IA</span>
+            <h3>Triagem em &lt; 1 minuto</h3>
+            <p>Responde dúvidas administrativas aprovadas (valores, convênios, endereço), identifica a especialidade e registra o interesse.</p>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-card reveal">
+            <span class="pipeline-step">03 / EQUIPE</span>
+            <h3>Recepção no controle</h3>
+            <p>Sua equipe recebe o contato organizado e com contexto para confirmar o agendamento (ou integrado direto à agenda).</p>
+          </div>
+        </div>
+
+        <!-- Módulos & Implantação em 4 Passos -->
         <div class="features-grid">
 
           <div class="feature-card reveal">
-            <div class="feature-num">01</div>
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <h3>Respostas automáticas</h3>
-            <p>Responde perguntas administrativas frequentes com informações aprovadas pela clínica, 24 horas por dia.</p>
+            <div class="feature-num">PASSO 01</div>
+            <h3>Diagnóstico e Mapeamento</h3>
+            <p>Analisamos seus canais atuais, gargalos de resposta e regras da clínica antes de escrever qualquer fluxo.</p>
           </div>
 
           <div class="feature-card reveal">
-            <div class="feature-num">02</div>
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
-            </div>
-            <h3>Organização de contatos</h3>
-            <p>Registra e organiza automaticamente os contatos recebidos em uma visão centralizada e acessível para a equipe.</p>
+            <div class="feature-num">PASSO 02</div>
+            <h3>Base Aprovada pela Clínica</h3>
+            <p>Configuramos respostas administrativas e regras de encaminhamento 100% validadas com sua equipe.</p>
           </div>
 
           <div class="feature-card reveal">
-            <div class="feature-num">03</div>
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </div>
-            <h3>Identificação do interesse</h3>
-            <p>Identifica o interesse informado pelo potencial paciente e classifica o contato antes de encaminhar à equipe.</p>
-          </div>
-
-          <div class="feature-card reveal">
-            <div class="feature-num">04</div>
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12.44a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.44 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.36 6.36l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <h3>Encaminhamento inteligente</h3>
-            <p>Encaminha solicitações para a equipe responsável, com o contexto necessário para um atendimento mais eficiente.</p>
-          </div>
-
-          <div class="feature-card reveal">
-            <div class="feature-num">05</div>
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-            </div>
-            <h3>Acompanhamento contínuo</h3>
-            <p>Apoia o acompanhamento de contatos conforme as regras definidas com a clínica, sem deixar oportunidades sem retorno.</p>
+            <div class="feature-num">PASSO 03</div>
+            <h3>Confirmação e Lembretes</h3>
+            <p>Fluxos para reduzir faltas com lembretes automáticos, além de reativação de pacientes inativos e pedido de avaliação no Google.</p>
           </div>
 
           <div class="feature-card feature-card--highlight reveal">
             <div class="feature-disclaimer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <p>A tecnologia trabalha como <strong>apoio à equipe</strong>. O atendimento humano continua disponível sempre que necessário.</p>
+              <p><strong>Segurança e Ética Médica:</strong> O sistema atua apenas no escopo administrativo. Não diagnostica, não recomenda tratamentos e o atendimento humano permanece disponível a qualquer momento.</p>
             </div>
           </div>
 
-        </div>
-
-        <div class="solution-cta reveal">
-          <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-            Quero conhecer o CONVERT IA
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
         </div>
 
       </div>
     </section>
 
     <!-- ====================================================================
-         METODOLOGIA — SEÇÃO EM BRANCO (COMO FUNCIONA)
+         QUEM SOMOS (SEÇÃO EM BRANCO)
          ==================================================================== -->
-    <section class="section methodology-section section-white" id="metodologia">
+    <section class="section about-section section-white" id="quem-somos">
       <div class="container">
-
-        <div class="section-header reveal">
-          <p class="section-label">COMO FUNCIONA</p>
-          <h2 class="section-title">Nossa metodologia</h2>
-          <p class="section-subtitle">Um processo estruturado, do diagnóstico à operação.</p>
+        <div class="about-grid">
+          <div class="about-photo-wrap reveal">
+            <img src="assets/lucas.jpg" alt="Lucas Casemiro — Fundador da CONVERT IA" class="about-photo" loading="lazy" />
+          </div>
+          <div class="about-content reveal">
+            <p class="section-label">QUEM ESTÁ POR TRÁS</p>
+            <h2 class="section-title">Tecnologia pensada para a rotina real de clínicas.</h2>
+            <p class="about-text">
+              Olá, eu sou o <strong>Lucas Casemiro</strong>. Desenvolvo sistemas, automações e fluxos de atendimento com inteligência artificial focados em resolver gargalos operacionais reais.
+            </p>
+            <p class="about-text">
+              Percebi que clínicas e consultórios investem alto em anúncios e estrutura física, mas perdem pacientes todos os dias por um motivo simples: a recepção não dá conta de responder tudo na hora no WhatsApp.
+            </p>
+            <p class="about-text">
+              Meu trabalho não é entregar um robô genérico, mas desenhar e acompanhar uma operação organizada, segura e compatível com a LGPD para que cada contato vire uma oportunidade real de consulta.
+            </p>
+          </div>
         </div>
-
-        <div class="steps-track">
-          <div class="steps-line" aria-hidden="true">
-            <div class="steps-line-fill"></div>
-          </div>
-
-          <div class="step-card reveal" data-step="1">
-            <div class="step-num-wrap">
-              <span class="step-num">01</span>
-            </div>
-            <div class="step-body">
-              <div class="step-tag">RAIO-X DO ATENDIMENTO</div>
-              <h3 class="step-title">Raio-X do Atendimento</h3>
-              <p class="step-desc">Analisamos os canais, as etapas do atendimento e os principais pontos de dificuldade.</p>
-              <div class="step-deliverable">
-                <span class="deliverable-label">Entrega</span>
-                <span>Diagnóstico do processo atual e mapa de oportunidades.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="step-card reveal" data-step="2">
-            <div class="step-num-wrap">
-              <span class="step-num">02</span>
-            </div>
-            <div class="step-body">
-              <div class="step-tag">RECEPÇÃO INTELIGENTE</div>
-              <h3 class="step-title">Recepção Inteligente</h3>
-              <p class="step-desc">Configuramos o fluxo de atendimento inicial com informações e respostas aprovadas pela clínica.</p>
-              <div class="step-deliverable">
-                <span class="deliverable-label">Entrega</span>
-                <span>Assistente configurado, base de perguntas frequentes e regras de encaminhamento.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="step-card reveal" data-step="3">
-            <div class="step-num-wrap">
-              <span class="step-num">03</span>
-            </div>
-            <div class="step-body">
-              <div class="step-tag">AGENDA EM MOVIMENTO</div>
-              <h3 class="step-title">Agenda em Movimento</h3>
-              <p class="step-desc">Organizamos o registro dos interessados e o acompanhamento das solicitações de agendamento.</p>
-              <div class="step-deliverable">
-                <span class="deliverable-label">Entrega</span>
-                <span>Fluxo de registro, acompanhamento e encaminhamento para a equipe.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="step-card reveal" data-step="4">
-            <div class="step-num-wrap">
-              <span class="step-num">04</span>
-            </div>
-            <div class="step-body">
-              <div class="step-tag">GESTÃO DE ATENDIMENTO</div>
-              <h3 class="step-title">Gestão de Atendimento</h3>
-              <p class="step-desc">Acompanhamos o funcionamento da operação e identificamos pontos que precisam de ajustes.</p>
-              <div class="step-deliverable">
-                <span class="deliverable-label">Entrega</span>
-                <span>Visão periódica dos contatos, solicitações, encaminhamentos e falhas identificadas.</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="methodology-note reveal">
-          <div class="note-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M13 2v7h7"/></svg>
-          </div>
-          <p>A implantação começa com o diagnóstico e a definição do fluxo adequado à realidade da clínica. Depois, configuramos, testamos e ajustamos a solução antes de colocá-la em operação.</p>
-          <p class="note-secondary">O escopo, os canais disponíveis, os limites de uso e as integrações serão definidos antes do início do projeto.</p>
-        </div>
-
       </div>
     </section>
 
     <!-- ====================================================================
-         INVESTIMENTO / PREÇOS
+         INVESTIMENTO / 3 PLANOS (SEÇÃO ESCURA)
          ==================================================================== -->
     <section class="section pricing-section" id="precos">
       <div class="container">
 
-        <div class="section-header reveal">
-          <p class="section-label">INVESTIMENTO</p>
-          <h2 class="section-title">Transparente desde o início</h2>
-          <p class="section-subtitle">Sem custos surpresa. Tudo definido antes do início do projeto.</p>
+        <div class="section-header text-center reveal">
+          <p class="section-label">INVESTIMENTO & PLANOS</p>
+          <h2 class="section-title">Menos que o custo de 1 recepcionista.<br />Mais barato que perder pacientes.</h2>
+          <p class="section-subtitle mx-auto">
+            O <strong>diagnóstico inicial de 20 minutos é gratuito</strong>. Você só avança para a implantação paga após aprovar o escopo.
+          </p>
         </div>
 
-        <div class="pricing-cards">
+        <div class="pricing-cards-3">
 
+          <!-- Plano 1: Essencial -->
           <div class="pricing-card reveal">
             <div class="pricing-card-top">
-              <div class="pricing-badge">Implantação</div>
+              <div class="pricing-badge">ESSENCIAL</div>
               <div class="pricing-value">
                 <span class="price-currency">R$</span>
-                <span class="price-amount">1.997</span>
+                <span class="price-amount">997</span>
+                <span class="price-period">/mês</span>
               </div>
-              <p class="pricing-desc">Configuração inicial do fluxo contratado, diagnóstico, implementação e testes dentro do escopo acordado.</p>
+              <p class="pricing-setup">+ Implantação inicial: <strong>R$ 1.497</strong> (única)</p>
+              <p class="pricing-desc">Para consultórios individuais que precisam responder rápido e organizar o WhatsApp.</p>
             </div>
             <ul class="pricing-features">
-              <li><span class="check-icon" aria-hidden="true">✓</span> Diagnóstico do processo atual</li>
-              <li><span class="check-icon" aria-hidden="true">✓</span> Configuração do assistente</li>
-              <li><span class="check-icon" aria-hidden="true">✓</span> Base de perguntas frequentes</li>
-              <li><span class="check-icon" aria-hidden="true">✓</span> Testes e ajustes iniciais</li>
-              <li><span class="check-icon" aria-hidden="true">✓</span> Regras de encaminhamento</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Atendimento inicial 24h no WhatsApp</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Respostas administrativas aprovadas</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Registro organizado de interessados</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Encaminhamento para a recepção</li>
             </ul>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-outline btn-block">Solicitar diagnóstico</a>
+            <a href="https://wa.me/5511915735039?text=Oi%2C%20tenho%20interesse%20no%20plano%20Essencial%20e%20quero%20agendar%20o%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener" class="btn btn-outline btn-block">Começar com Essencial</a>
           </div>
 
+          <!-- Plano 2: Completo (Destaque) -->
           <div class="pricing-card pricing-card--featured reveal">
             <div class="pricing-card-top">
-              <div class="pricing-badge pricing-badge--accent">Acompanhamento</div>
+              <div class="pricing-badge pricing-badge--accent">COMPLETO · MAIS ESCOLHIDO</div>
               <div class="pricing-value">
                 <span class="price-currency">R$</span>
                 <span class="price-amount">1.297</span>
                 <span class="price-period">/mês</span>
               </div>
-              <p class="pricing-desc">Monitoramento operacional, suporte e ajustes previstos no plano contratado.</p>
+              <p class="pricing-setup">+ Implantação inicial: <strong>R$ 1.997</strong> (única)</p>
+              <p class="pricing-desc">Para clínicas em crescimento que querem reduzir faltas e acompanhar o funil completo.</p>
             </div>
             <ul class="pricing-features">
-              <li><span class="check-icon" aria-hidden="true">✓</span> Monitoramento contínuo</li>
-              <li><span class="check-icon" aria-hidden="true">✓</span> Suporte técnico incluso</li>
-              <li><span class="check-icon" aria-hidden="true">✓</span> Ajustes periódicos</li>
-              <li><span class="check-icon" aria-hidden="true">✓</span> Visão periódica de desempenho</li>
-              <li><span class="check-icon" aria-hidden="true">✓</span> Atualização de regras e fluxos</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Tudo do plano Essencial + Instagram DM</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Confirmação e lembrete de consultas</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Integração com agenda (Google/Feegow/Clinicorp)</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Reativação de inativos + pedido de avaliação Google</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Monitoramento operacional e ajustes mensais</li>
             </ul>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary btn-block">Solicitar diagnóstico</a>
+            <a href="https://wa.me/5511915735039?text=Oi%2C%20tenho%20interesse%20no%20plano%20Completo%20e%20quero%20agendar%20o%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener" class="btn btn-primary btn-block">Solicitar diagnóstico Completo</a>
+          </div>
+
+          <!-- Plano 3: Multiunidade -->
+          <div class="pricing-card reveal">
+            <div class="pricing-card-top">
+              <div class="pricing-badge">MULTIUNIDADE</div>
+              <div class="pricing-value">
+                <span class="price-amount" style="font-size: 2.2rem;">Sob consulta</span>
+              </div>
+              <p class="pricing-setup">Escopo dedicado por unidade</p>
+              <p class="pricing-desc">Para redes de clínicas, múltiplas especialidades ou alto volume de atendimentos.</p>
+            </div>
+            <ul class="pricing-features">
+              <li><span class="check-icon" aria-hidden="true">✓</span> Roteamento por unidade ou especialidade</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Dashboard consolidado de funil</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Integrações customizadas com ERP/CRM</li>
+              <li><span class="check-icon" aria-hidden="true">✓</span> Suporte prioritário dedicado</li>
+            </ul>
+            <a href="https://wa.me/5511915735039?text=Oi%2C%20tenho%20uma%20cl%C3%ADnica%20multiunidade%20e%20quero%20conversar%20sobre%20escopo." target="_blank" rel="noopener" class="btn btn-outline btn-block">Falar sobre Multiunidade</a>
           </div>
 
         </div>
 
         <div class="pricing-disclaimer reveal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="disclaimer-icon"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          <p>Valores de referência para o pacote inicial. Integrações adicionais, ferramentas de terceiros, consumo de APIs e demandas fora do escopo podem ter custos próprios, apresentados antes da contratação.</p>
+          <p><strong>Transparência sobre custos externos:</strong> Taxas de API oficial do WhatsApp Business (Meta) e consumo de tokens de IA são pagos diretamente pela clínica conforme o volume de uso (tipicamente entre R$ 80 e R$ 250/mês para clínicas de porte padrão), sempre apresentados antes da contratação.</p>
         </div>
 
       </div>
@@ -471,7 +516,7 @@
         <div class="section-header text-center reveal">
           <p class="section-label">PERGUNTAS FREQUENTES</p>
           <h2 class="section-title">Tire suas dúvidas</h2>
-          <p class="section-subtitle mx-auto">Respostas diretas para as dúvidas mais comuns sobre implantação, rotina e limites da tecnologia.</p>
+          <p class="section-subtitle mx-auto">Respostas diretas sobre rotina, integrações, LGPD e limites da tecnologia.</p>
         </div>
 
         <div class="faq-list">
@@ -492,37 +537,37 @@
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Não. O escopo é administrativo. A solução não diagnostica, interpreta sintomas, recomenda tratamentos ou substitui profissionais de saúde.</p>
+              <p>Não. O escopo é estritamente administrativo. A solução não diagnostica, interpreta sintomas, recomenda tratamentos ou substitui profissionais de saúde.</p>
             </div>
           </div>
 
           <div class="faq-item reveal">
             <button class="faq-question" aria-expanded="false">
-              <span>A ferramenta agenda consultas automaticamente?</span>
+              <span>Com quais agendas o sistema se integra?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Isso depende da integração com a agenda utilizada pela clínica. A funcionalidade só será oferecida quando a integração estiver disponível, configurada e testada. Caso contrário, a solicitação será encaminhada à equipe.</p>
+              <p>Integramos com sistemas que oferecem API ou webhook (como Google Agenda, Feegow, Clinicorp, iClinic, entre outros). Caso sua clínica utilize uma agenda sem integração aberta, o fluxo registra a solicitação e encaminha para sua equipe confirmar o horário.</p>
             </div>
           </div>
 
           <div class="faq-item reveal">
             <button class="faq-question" aria-expanded="false">
-              <span>Funciona no WhatsApp e Instagram?</span>
+              <span>Como funciona a proteção de dados e LGPD?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Os canais serão definidos conforme as integrações e permissões disponíveis para a clínica. A implantação começa com o escopo aprovado no diagnóstico.</p>
+              <p>Tratamos os dados em conformidade com a Lei Geral de Proteção de Dados (LGPD). As conversas trafegam com criptografia, ficam sob controle da clínica e nunca são utilizadas para treinar modelos públicos de inteligência artificial.</p>
             </div>
           </div>
 
           <div class="faq-item reveal">
             <button class="faq-question" aria-expanded="false">
-              <span>Como começo?</span>
+              <span>O diagnóstico de 20 minutos é realmente gratuito?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Solicite um diagnóstico. Vamos entender como sua clínica recebe, responde e acompanha os contatos antes de recomendar a implementação.</p>
+              <p>Sim. Fazemos uma análise rápida de como sua clínica recebe e responde os contatos hoje. Só recomendamos a implantação paga se identificarmos ganho real para sua operação.</p>
             </div>
           </div>
 
@@ -532,43 +577,64 @@
     </section>
 
     <!-- ====================================================================
-         CTA FINAL
+         CTA FINAL COM FORMULÁRIO DE QUALIFICAÇÃO
          ==================================================================== -->
     <section class="section cta-section" id="contato">
       <div class="container">
         <div class="cta-block reveal">
           <div class="cta-content">
-            <p class="section-label">PRÓXIMO PASSO</p>
+            <p class="section-label">DIAGNÓSTICO GRATUITO (20 MIN)</p>
             <h2 class="cta-title">
-              Sua clínica merece um atendimento organizado<br />
-              para <span class="text-accent">acompanhar cada oportunidade.</span>
+              Sua clínica merece um atendimento organizado para <span class="text-accent">converter mais pacientes.</span>
             </h2>
             <p class="cta-desc">
-              Vamos entender seu processo atual e identificar onde a tecnologia pode ajudar.
+              Preencha os dados ao lado para iniciar a conversa já com o contexto da sua clínica, ou chame direto no WhatsApp.
             </p>
             <div class="cta-actions">
-              <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-wapp">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                Conversar pelo WhatsApp
+              <a href="https://wa.me/5511915735039?text=Oi%2C%20vim%20pelo%20site%20e%20quero%20avaliar%20meu%20atendimento." target="_blank" rel="noopener" class="btn btn-outline btn-lg btn-wapp">
+                Chamar direto no WhatsApp
               </a>
             </div>
           </div>
 
-          <div class="cta-visual" aria-hidden="true">
-            <div class="cta-stat-stack">
-              <div class="cta-stat">
-                <span class="stat-value">+40%</span>
-                <span class="stat-label">de contatos respondidos no mesmo dia</span>
+          <div class="cta-form-wrap">
+            <form id="lead-qualify-form" class="qualify-form">
+              <div class="form-group">
+                <label for="lead-name">Seu nome</label>
+                <input type="text" id="lead-name" placeholder="Ex: Dra. Mariana" required />
               </div>
-              <div class="cta-stat">
-                <span class="stat-value">24h</span>
-                <span class="stat-label">de atendimento inicial disponível</span>
+              <div class="form-group">
+                <label for="lead-clinic">Nome da clínica</label>
+                <input type="text" id="lead-clinic" placeholder="Ex: Clínica Vida" required />
               </div>
-              <div class="cta-stat">
-                <span class="stat-value">0</span>
-                <span class="stat-label">oportunidades perdidas por falta de retorno</span>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="lead-specialty">Especialidade</label>
+                  <select id="lead-specialty" required>
+                    <option value="">Selecione...</option>
+                    <option value="Odontologia">Odontologia</option>
+                    <option value="Estética / Dermatologia">Estética / Dermatologia</option>
+                    <option value="Fisioterapia / Ortopedia">Fisioterapia / Ortopedia</option>
+                    <option value="Clínica Médica / Multiespecialidade">Multiespecialidade</option>
+                    <option value="Outra">Outra</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="lead-volume">Mensagens/mês</label>
+                  <select id="lead-volume" required>
+                    <option value="">Selecione...</option>
+                    <option value="Até 100">Até 100</option>
+                    <option value="100 a 300">100 a 300</option>
+                    <option value="300 a 800">300 a 800</option>
+                    <option value="Acima de 800">Acima de 800</option>
+                  </select>
+                </div>
               </div>
-            </div>
+              <button type="submit" class="btn btn-primary btn-block btn-lg">
+                Enviar e agendar diagnóstico →
+              </button>
+              <p class="form-lgpd-note">Seus dados são usados apenas para este atendimento, conforme a LGPD.</p>
+            </form>
           </div>
         </div>
       </div>
@@ -587,19 +653,35 @@
           <span class="logo-text">CONVERT <span class="logo-ia">IA</span></span>
         </div>
         <p class="footer-tagline">Tecnologia que transforma atendimento em oportunidades.</p>
-        <p class="footer-legal">© 2025 CONVERT IA. Todos os direitos reservados.</p>
+        <p class="footer-legal">© 2026 CONVERT IA. Todos os direitos reservados.</p>
       </div>
       <div class="footer-links">
-        <a href="#solucao">Solução</a>
-        <a href="#metodologia">Como Funciona</a>
-        <a href="#precos">Investimento</a>
-        <a href="#faq">FAQ</a>
+        <a href="#problema">Diagnóstico</a>
+        <a href="#solucao">Como Funciona</a>
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#precos">Planos</a>
+        <button type="button" class="footer-privacy-btn" id="open-privacy-modal">Privacidade & LGPD</button>
       </div>
     </div>
   </footer>
 
+  <!-- Modal Privacidade & LGPD -->
+  <div class="privacy-modal" id="privacy-modal" aria-hidden="true" role="dialog" aria-labelledby="privacy-title">
+    <div class="privacy-modal-backdrop" id="privacy-backdrop"></div>
+    <div class="privacy-modal-content">
+      <button type="button" class="privacy-close" id="close-privacy-modal" aria-label="Fechar">✕</button>
+      <h3 id="privacy-title">Política de Privacidade & Conformidade LGPD</h3>
+      <p>A <strong>CONVERT IA</strong> atua em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+      <ul>
+        <li><strong>Finalidade:</strong> Os dados informados no formulário de diagnóstico (nome, clínica, especialidade e volume) são utilizados exclusivamente para contato comercial e avaliação operacional.</li>
+        <li><strong>Dados de Pacientes:</strong> Na operação das clínicas clientes, os dados trafegam com criptografia, permanecem sob controle da clínica (Controladora) e nunca são utilizados para treinar modelos públicos de inteligência artificial.</li>
+        <li><strong>Direitos do Titular:</strong> Você pode solicitar a exclusão ou alteração dos seus dados a qualquer momento pelo WhatsApp oficial.</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- WhatsApp Button fixo -->
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="wapp-float" aria-label="Conversar no WhatsApp">
+  <a href="https://wa.me/5511915735039?text=Oi%2C%20vim%20pelo%20site%20e%20quero%20avaliar%20meu%20atendimento." target="_blank" rel="noopener" class="wapp-float" aria-label="Conversar no WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
   </a>
 
