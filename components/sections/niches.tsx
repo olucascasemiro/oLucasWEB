@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, type CSSProperties } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -11,9 +11,23 @@ import {
   ShoppingBag,
   Wrench,
 } from "lucide-react";
+import WorkflowBlueprint from "@/components/ui/interactive-workflow-blueprint";
 import { cn } from "@/lib/utils";
 import { NicheId, NicheItem, siteConfig, waLink } from "@/lib/site";
+import { NICHE_WORKFLOWS, WORKFLOW_APPS } from "@/lib/workflows";
 import { track } from "@/lib/track";
+
+const WORKFLOW_THEME_STYLE = {
+  "--color-background": "#f8f7f3",
+  "--color-foreground": "#171717",
+  "--color-card": "#ffffff",
+  "--color-muted-foreground": "#74716c",
+  "--color-border": "#d9d6d0",
+  "--color-primary": "#ff7a2f",
+  "--color-primary-foreground": "#171717",
+  "--color-chart-2": "#171717",
+  "--color-chart-3": "#d97706",
+} as CSSProperties;
 
 const ICONS = {
   HeartPulse,
@@ -23,6 +37,7 @@ const ICONS = {
 };
 
 function DemoPanel({ niche }: { niche: NicheItem }) {
+  const workflow = NICHE_WORKFLOWS[niche.id];
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [processDesc, setProcessDesc] = useState("");
@@ -238,6 +253,32 @@ function DemoPanel({ niche }: { niche: NicheItem }) {
             </div>
           ) : null}
         </div>
+      </div>
+
+      {/* Fluxo visual interativo da automação do nicho */}
+      <div className="mt-8 border-t border-(color:--color-n3-line) pt-8">
+        <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-(color:--color-n3-grey)">
+              Visão geral do fluxo
+            </p>
+            <h4 className="mt-1 text-lg font-semibold text-(color:--color-n3-ink) sm:text-xl">
+              Como a automação funciona por trás
+            </h4>
+          </div>
+          <p className="text-xs text-(color:--color-n3-grey) sm:text-sm">
+            Arraste as etapas ou adicione integrações para simular o fluxo.
+          </p>
+        </div>
+
+        <WorkflowBlueprint
+          key={niche.id}
+          title={workflow.title}
+          initialGraph={workflow.graph}
+          apps={WORKFLOW_APPS}
+          agentTemplate={workflow.agentTemplate}
+          style={WORKFLOW_THEME_STYLE}
+        />
       </div>
     </div>
   );
