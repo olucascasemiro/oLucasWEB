@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --color-n3-page: #f8f7f3;
+  --color-n3-ink: #171717;
+  --color-n3-grey: #74716c;
+  --color-n3-line: #d9d6d0;
+  --color-n3-accent: #ff7a2f;
+  --n3-nav-space: 72px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-n3-page);
+    color: var(--color-n3-ink);
+    font-family: var(--font-n3-sans), system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-n3-page);
+    background-image: radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      rgba(255, 122, 47, 0.08),
+      transparent 70%
+    );
+    color: var(--color-n3-ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus visible outline in accent color */
+  :focus-visible {
+    outline: 2px solid var(--color-n3-accent);
+    outline-offset: 2px;
+  }
+}
+
+.n3-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 640px) {
+  .n3-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .n3-container {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+}
+
+section[id] {
+  scroll-margin-top: var(--n3-nav-space, 72px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

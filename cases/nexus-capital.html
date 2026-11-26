@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Capital — Portal Institucional & Data Room Seguro | oLucasWEB Studio</title>
+  <meta name="description" content="Estudo de caso: Como transformamos a presença digital e a segurança documental de uma assessoria financeira de alta renda com Next.js e Data Room corporativo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .case-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 10, 9, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-default);
+      padding: 16px 0;
+    }
+    .case-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .case-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .case-back-link:hover {
+      color: var(--accent-green);
+    }
+    .case-hero {
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--border-default);
+      background: radial-gradient(circle at 50% 0%, rgba(181, 240, 195, 0.05) 0%, transparent 60%);
+    }
+    .case-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      padding: 24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+    }
+    .case-meta-item .label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .case-meta-item .val {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .case-section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+    .case-editorial-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 48px;
+    }
+    .case-editorial-sidebar h3 {
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .case-editorial-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .case-kpi-card {
+      background: rgba(181, 240, 195, 0.03);
+      border: 1px solid rgba(181, 240, 195, 0.15);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      text-align: center;
+    }
+    .case-kpi-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-green);
+      font-family: var(--font-display);
+      margin-bottom: 8px;
+    }
+    .case-kpi-label {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    @media (max-width: 900px) {
+      .case-meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-editorial-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (max-width: 600px) {
+      .case-meta-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="case-nav">
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <span class="logo-name">oLucas</span><span class="logo-web">WEB</span>
+        <span class="logo-tag">STUDIO</span>
+      </a>
+      <a href="../index.html#projetos" class="case-back-link">
+        <span>← Voltar aos Projetos</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section do Case -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="eyebrow-pill">ESTUDO DE CASO // WEB DEVELOPMENT</span>
+      </div>
+      <h1 class="hero-title" style="font-size: clamp(2.2rem, 4.5vw, 3.4rem); margin: 20px 0 16px;">
+        Nexus Capital — Portal Institucional de Alta Performance & Data Room Seguro
+      </h1>
+      <p class="hero-subtitle" style="max-width: 780px;">
+        Como reformulamos a presença digital de uma gestora de patrimônio com arquitetura headless, pontuação 99+ no Google PageSpeed e uma sala segura de investidores com proteção ponta a ponta.
+      </p>
+
+      <div class="case-meta-grid">
+        <div class="case-meta-item">
+          <div class="label">Cliente & Mercado</div>
+          <div class="val">Nexus Capital (Multi-Family Office)</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Escopo de Engenharia</div>
+          <div class="val">Website Institucional + Data Room</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Stack Tecnológica</div>
+          <div class="val">Next.js Headless • Tailwind • Supabase</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Impacto Consolidado</div>
+          <div class="val" style="color: var(--accent-green);">+240% em conversão de investidores</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 1: O Desafio -->
+  <section class="case-section">
+    <div class="container">
+      <div class="case-editorial-grid">
+        <div class="case-editorial-sidebar">
+          <div class="eyebrow"><span class="eyebrow-pill">01 // DIAGNÓSTICO</span></div>
+          <h3>O Desafio de Negócio</h3>
+        </div>
+        <div class="case-editorial-content">
+          <p>
+            A <strong>Nexus Capital</strong> gerenciava centenas de milhões em ativos, mas seu portal online transmitia uma imagem obsoleta e amadora construída em WordPress cinco anos antes. A página demorava mais de 4 segundos para carregar, sofria com plugins desatualizados e falhava nos testes de segurança solicitados por famílias de alto patrimônio (HNWIs).
+          </p>
+          <p>
+            Além disso, os relatórios trimestrais de rentabilidade eram enviados manualmente em arquivos PDF anexados em e-mails convencionais — um risco crítico de vazamento de dados de clientes confidenciais.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 2: A Solução -->
+  <section class="case-section">
+    <div class="container">
+      <div class="case-editorial-grid">
+        <div class="case-editorial-sidebar">
+          <div class="eyebrow"><span class="eyebrow-pill">02 // ARQUITETURA</span></div>
+          <h3>A Solução Desenvolvida pela oLucasWEB</h3>
+        </div>
+        <div class="case-editorial-content">
+          <p>
+            Projetamos uma presença digital sob medida inspirada nos padrões institucionais de fundos de venture capital globais:
+          </p>
+          <ul style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
+            <li><strong>Frontend Headless com Next.js:</strong> Renderização estática ultra veloz (SSG) com tempo de carregamento de <strong>42ms</strong> e score 99 no Google Lighthouse.</li>
+            <li><strong>Data Room Seguro com Supabase:</strong> Área restrita com autenticação de dois fatores (2FA), controle de acessos por nível e criptografia ponta a ponta para visualização de relatórios.</li>
+            <li><strong>Proteção Contra Downloads Não Autorizados:</strong> Visualizador de relatórios proprietário em canvas com marcas d'água dinâmicas contendo o IP e CPF do usuário em tempo real.</li>
+            <li><strong>Integração com CRM HubSpot:</strong> Formulários de qualificação de investidores sincronizados instantaneamente com o time de private banking.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 3: Resultados -->
+  <section class="case-section">
+    <div class="container">
+      <div class="case-editorial-grid">
+        <div class="case-editorial-sidebar">
+          <div class="eyebrow"><span class="eyebrow-pill">03 // MÉTRICAS</span></div>
+          <h3>Resultados Medidos</h3>
+        </div>
+        <div class="case-editorial-content">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 24px;">
+            <div class="case-kpi-card">
+              <div class="case-kpi-number">+240%</div>
+              <div class="case-kpi-label">Aumento na qualificação de novos investidores pelo portal</div>
+            </div>
+            <div class="case-kpi-card">
+              <div class="case-kpi-number">42ms</div>
+              <div class="case-kpi-label">Latência média global de resposta e renderização</div>
+            </div>
+            <div class="case-kpi-card">
+              <div class="case-kpi-number">100%</div>
+              <div class="case-kpi-label">Conformidade com LGPD e auditoria de segurança</div>
+            </div>
+          </div>
+          <p>
+            <em>"A nova estrutura digital elevou nossa autoridade institucional a um nível que reflete exatamente a solidez do nosso trabalho financeiro. O processo foi conduzido diretamente com o Lucas, sem perda de tempo ou ruídos de comunicação."</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final do Case -->
+  <section class="section text-center" style="background: var(--bg-surface); border-top: 1px solid var(--border-default);">
+    <div class="container" style="max-width: 720px;">
+      <div class="eyebrow"><span class="eyebrow-pill">VAMOS CONVERSAR</span></div>
+      <h2 class="section-title" style="margin: 16px 0;">Quer elevar o padrão digital do seu negócio?</h2>
+      <p class="section-subtitle" style="margin-bottom: 32px;">
+        Entendo o seu modelo operacional e construo a solução tecnológica adequada para transformar sua presença e seus processos.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Lucas!%20Vi%20o%20case%20da%20Nexus%20Capital%20e%20gostaria%20de%20avaliar%20um%20projeto%20semelhante." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>Iniciar Diagnóstico com Lucas ↗</span>
+        </a>
+        <a href="../index.html#projetos" class="btn btn-secondary">
+          <span>Ver Outros Projetos</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>© 2026 oLucasWEB — Digital Solutions Studio. Todos os direitos reservados.</div>
+      <div>Tecnologia aplicada ao crescimento.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

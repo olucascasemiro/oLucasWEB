@@ -1,0 +1,10 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "ignorePatterns": [
+    "components/ui/executive-pricing-plan.tsx",
+    "components/ui/ink-orbit-features.tsx",
+    "components/demo.tsx",
+    "components/ink-demo.tsx",
+    "scratch/"
+  ]
+}
