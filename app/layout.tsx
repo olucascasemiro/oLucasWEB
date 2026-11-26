@@ -1,29 +1,92 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { GA_ID } from "@/lib/track";
 import "@fontsource-variable/onest";
 import "./globals.css";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#16a34a",
+};
+
 export const metadata: Metadata = {
-  title: "Lucas Casemiro | Automações e IA para negócios",
+  metadataBase: new URL("https://olucasweb.com.br"),
+  title: "oLucasWEB | Lucas Casemiro — Automações, IA e Soluções Digitais",
   description:
-    "Eu desenho e implanto automações de atendimento, follow-up e processos para negócios.",
+    "Hub de soluções digitais, desenvolvimento web, automação de processos e inteligência artificial para empresas em São Paulo e em todo o Brasil.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Lucas Casemiro | Automações e IA para negócios",
+    title: "oLucasWEB | Lucas Casemiro — Automações, IA e Soluções Digitais",
     description:
-      "Automações que tiram o trabalho repetitivo do seu negócio. Escolha seu segmento para ver como funciona.",
+      "Automações que tiram o trabalho repetitivo do seu negócio. Atendimento, follow-up, integrações e agentes de IA sob medida.",
+    url: "https://olucasweb.com.br",
+    siteName: "oLucasWEB",
     type: "website",
     locale: "pt_BR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lucas Casemiro | Automações e IA para negócios",
+    title: "oLucasWEB | Lucas Casemiro — Automações e IA para negócios",
     description:
-      "Automações de atendimento, follow-up e processos para negócios.",
+      "Automações de atendimento, follow-up, desenvolvimento web e IA para empresas.",
   },
-  icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23171717'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='15' fill='%23f8f7f3'%3ELC%3C/text%3E%3C/svg%3E",
-  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://olucasweb.com.br/#website",
+      url: "https://olucasweb.com.br",
+      name: "oLucasWEB",
+      description:
+        "Hub de soluções digitais, automação de processos, desenvolvimento web e inteligência artificial para negócios.",
+      inLanguage: "pt-BR",
+      publisher: { "@id": "https://olucasweb.com.br/#service" },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://olucasweb.com.br/#service",
+      name: "oLucasWEB — Lucas Casemiro",
+      url: "https://olucasweb.com.br",
+      description:
+        "Desenvolvimento web, automações de atendimento no WhatsApp, integrações digitais e agentes de inteligência artificial para empresas.",
+      founder: {
+        "@type": "Person",
+        name: "Lucas Casemiro",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "São Paulo",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "São Paulo",
+          addressRegion: "SP",
+          addressCountry: "BR",
+        },
+      },
+      serviceType: [
+        "Automação de Processos",
+        "Inteligência Artificial para Empresas",
+        "Desenvolvimento Web",
+        "Integrações Digitais",
+      ],
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -34,6 +97,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className="min-h-screen antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         {GA_ID ? (
           <>

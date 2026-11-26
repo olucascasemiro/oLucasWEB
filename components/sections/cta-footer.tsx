@@ -34,7 +34,7 @@ export function CtaFooter() {
               {siteConfig.brand.name}
             </p>
             <p className="mt-1 text-xs text-(color:--color-n3-grey)">
-              © {year} {siteConfig.brand.name}. Todos os direitos reservados.
+              © {year} {siteConfig.brand.name}. Todos os direitos reservados. · São Paulo — Brasil
             </p>
           </div>
 

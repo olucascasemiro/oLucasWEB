@@ -3,8 +3,11 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade | Lucas Casemiro",
-  description: "Política de privacidade e tratamento de dados pessoais (LGPD).",
+  title: "Política de Privacidade | oLucasWEB — Lucas Casemiro",
+  description: "Política de privacidade e tratamento de dados pessoais (LGPD) do oLucasWEB.",
+  alternates: {
+    canonical: "/privacidade",
+  },
 };
 
 export default function PrivacidadePage() {
