@@ -75,7 +75,7 @@ export default function Navbar2() {
   const activeMenu = openMenu ? MEGA_MENUS[openMenu] : null;
 
   return (
-    <header className="sticky top-0 z-50 flex justify-center px-4 py-3">
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-3">
       <div className="w-full max-w-7xl">
         <motion.div
           layout
