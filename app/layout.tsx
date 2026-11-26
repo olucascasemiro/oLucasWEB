@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
-import { Onest } from "next/font/google";
 import Script from "next/script";
 import { GA_ID } from "@/lib/track";
+import "@fontsource-variable/onest";
 import "./globals.css";
-
-const onest = Onest({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-n3-sans",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Lucas Casemiro | Automações e IA para negócios",
@@ -39,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={onest.variable}>
+    <html lang="pt-BR">
       <body className="min-h-screen antialiased">
         {children}
         {GA_ID ? (

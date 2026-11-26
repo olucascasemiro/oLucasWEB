@@ -7,6 +7,8 @@
   --color-n3-line: #d9d6d0;
   --color-n3-accent: #ff7a2f;
   --n3-nav-space: 72px;
+  /* Onest via @fontsource-variable/onest – auto-hosted, no Google Fonts call */
+  --font-n3-sans: "Onest Variable", system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -14,7 +16,7 @@
     scroll-behavior: smooth;
     background-color: var(--color-n3-page);
     color: var(--color-n3-ink);
-    font-family: var(--font-n3-sans), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-n3-sans);
   }
 
   body {
