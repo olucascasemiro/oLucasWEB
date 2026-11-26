@@ -1,33 +1,20 @@
 "use client";
 
-import React, { useState, type CSSProperties } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
   Building2,
-  Check,
   HeartPulse,
+  ImagePlus,
   Info,
+  PlayCircle,
   ShoppingBag,
   Wrench,
 } from "lucide-react";
-import WorkflowBlueprint from "@/components/ui/interactive-workflow-blueprint";
 import { cn } from "@/lib/utils";
 import { NicheId, NicheItem, siteConfig, waLink } from "@/lib/site";
-import { NICHE_WORKFLOWS, WORKFLOW_APPS } from "@/lib/workflows";
 import { track } from "@/lib/track";
-
-const WORKFLOW_THEME_STYLE = {
-  "--color-background": "#f8f7f3",
-  "--color-foreground": "#171717",
-  "--color-card": "#ffffff",
-  "--color-muted-foreground": "#74716c",
-  "--color-border": "#d9d6d0",
-  "--color-primary": "#ff7a2f",
-  "--color-primary-foreground": "#171717",
-  "--color-chart-2": "#171717",
-  "--color-chart-3": "#d97706",
-} as CSSProperties;
 
 const ICONS = {
   HeartPulse,
@@ -36,8 +23,7 @@ const ICONS = {
   Wrench,
 };
 
-function DemoPanel({ niche }: { niche: NicheItem }) {
-  const workflow = NICHE_WORKFLOWS[niche.id];
+function SegmentMediaPanel({ niche }: { niche: NicheItem }) {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [processDesc, setProcessDesc] = useState("");
@@ -61,61 +47,40 @@ function DemoPanel({ niche }: { niche: NicheItem }) {
       aria-live="polite"
       className="rounded-3xl border border-(color:--color-n3-line) bg-white p-6 shadow-sm sm:p-8 lg:p-10"
     >
-      {/* Rótulo fixo e visível */}
-      <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-(color:--color-n3-line) bg-(color:--color-n3-page) px-3.5 py-1.5 text-xs font-medium text-(color:--color-n3-grey)">
-        <Info className="h-3.5 w-3.5 text-(color:--color-n3-accent)" aria-hidden="true" />
-        <span>{siteConfig.nichesSection.illustrativeLabel}</span>
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <div className="inline-flex items-center gap-2 rounded-full border border-(color:--color-n3-line) bg-(color:--color-n3-page) px-3.5 py-1.5 text-xs font-medium text-(color:--color-n3-grey)">
+          <Info className="h-3.5 w-3.5 text-(color:--color-n3-accent)" aria-hidden="true" />
+          <span>{siteConfig.nichesSection.illustrativeLabel}</span>
+        </div>
+
+        <a
+          href="#fluxo"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-(color:--color-n3-ink) underline decoration-(color:--color-n3-accent) decoration-2 underline-offset-4 hover:opacity-80"
+        >
+          <span>Ver fluxo por trás dessa automação</span>
+          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+        </a>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
-        {/* Esquerda: O que eu automatizo */}
-        <div className="lg:col-span-5">
-          <p className="text-xs font-semibold uppercase tracking-wider text-(color:--color-n3-grey)">
-            {niche.name}
-          </p>
-          <h3 className="mt-2 text-xl font-semibold text-(color:--color-n3-ink) sm:text-2xl">
-            {siteConfig.nichesSection.automatesTitle}
-          </h3>
-
-          <ul className="mt-5 space-y-3.5">
-            {niche.automates.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-(color:--color-n3-ink) sm:text-base">
-                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-(color:--color-n3-accent)/20 text-(color:--color-n3-ink)">
-                  <Check className="h-3.5 w-3.5" aria-hidden="true" />
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-7">
-            {niche.ctaType === "route" ? (
-              <Link
-                href={niche.ctaHref}
-                className="inline-flex min-h-11 items-center gap-2 rounded-full bg-(color:--color-n3-ink) px-5 text-sm font-medium text-(color:--color-n3-page) transition-transform hover:-translate-y-0.5"
-              >
-                <span>{niche.ctaLabel}</span>
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            ) : niche.ctaType === "whatsapp" ? (
-              <a
-                href={waLink(niche.ctaHref)}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() =>
-                  track("whatsapp_click", { origin: `panel_${niche.id}` })
-                }
-                className="inline-flex min-h-11 items-center gap-2 rounded-full bg-(color:--color-n3-ink) px-5 text-sm font-medium text-(color:--color-n3-page) transition-transform hover:-translate-y-0.5"
-              >
-                <span>{niche.ctaLabel}</span>
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            ) : null}
+      <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+        {/* Esquerda: Placeholder de Imagem / Vídeo do segmento */}
+        <div className="lg:col-span-7">
+          <div className="flex aspect-video w-full flex-col items-center justify-center rounded-2xl border-2 border-dashed border-(color:--color-n3-line) bg-(color:--color-n3-page) p-6 text-center">
+            <div className="flex items-center gap-2.5 text-(color:--color-n3-accent)">
+              <ImagePlus className="h-7 w-7" aria-hidden="true" />
+              <PlayCircle className="h-7 w-7" aria-hidden="true" />
+            </div>
+            <p className="mt-3 text-sm font-semibold text-(color:--color-n3-ink) sm:text-base">
+              Espaço reservado para imagem ou vídeo — {niche.name}
+            </p>
+            <p className="mt-1 max-w-md text-xs leading-relaxed text-(color:--color-n3-grey)">
+              Insira aqui um print real, gravação de tela ou vídeo curto (60–90s) mostrando a automação de {niche.name.toLowerCase()} em funcionamento.
+            </p>
           </div>
         </div>
 
-        {/* Direita: Mock de WhatsApp OU Formulário Personalizado */}
-        <div className="lg:col-span-7">
+        {/* Direita: Prévia de conversa OU Formulário Personalizado */}
+        <div className="lg:col-span-5">
           {niche.id === "personalizado" ? (
             <form
               onSubmit={handleCustomSubmit}
@@ -125,7 +90,7 @@ function DemoPanel({ niche }: { niche: NicheItem }) {
                 {siteConfig.customForm.title}
               </h4>
 
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <div>
                   <label
                     htmlFor="custom-name"
@@ -163,7 +128,7 @@ function DemoPanel({ niche }: { niche: NicheItem }) {
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-3">
                 <label
                   htmlFor="custom-process"
                   className="mb-1.5 block text-xs font-medium text-(color:--color-n3-ink)"
@@ -190,7 +155,7 @@ function DemoPanel({ niche }: { niche: NicheItem }) {
 
               <button
                 type="submit"
-                className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-(color:--color-n3-accent) px-6 text-sm font-semibold text-(color:--color-n3-ink) transition-transform hover:-translate-y-0.5 sm:w-auto"
+                className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-(color:--color-n3-accent) px-6 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 sm:w-auto"
               >
                 <span>{siteConfig.customForm.submitLabel}</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -219,7 +184,7 @@ function DemoPanel({ niche }: { niche: NicheItem }) {
                   <div
                     key={idx}
                     className={cn(
-                      "flex max-w-[85%] flex-col gap-1",
+                      "flex max-w-[88%] flex-col gap-1",
                       msg.sender === "assistant" ? "self-end" : "self-start"
                     )}
                   >
@@ -254,32 +219,6 @@ function DemoPanel({ niche }: { niche: NicheItem }) {
           ) : null}
         </div>
       </div>
-
-      {/* Fluxo visual interativo da automação do nicho */}
-      <div className="mt-8 border-t border-(color:--color-n3-line) pt-8">
-        <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-(color:--color-n3-grey)">
-              Visão geral do fluxo
-            </p>
-            <h4 className="mt-1 text-lg font-semibold text-(color:--color-n3-ink) sm:text-xl">
-              Como a automação funciona por trás
-            </h4>
-          </div>
-          <p className="text-xs text-(color:--color-n3-grey) sm:text-sm">
-            Arraste as etapas ou adicione integrações para simular o fluxo.
-          </p>
-        </div>
-
-        <WorkflowBlueprint
-          key={niche.id}
-          title={workflow.title}
-          initialGraph={workflow.graph}
-          apps={WORKFLOW_APPS}
-          agentTemplate={workflow.agentTemplate}
-          style={WORKFLOW_THEME_STYLE}
-        />
-      </div>
     </div>
   );
 }
@@ -306,7 +245,7 @@ export function NichesSection() {
           </p>
         </div>
 
-        {/* Grid de 4 cards selecionáveis */}
+        {/* Grid de 4 cards selecionáveis (3 cases + personalizado) */}
         <div
           className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
           role="tablist"
@@ -416,10 +355,10 @@ export function NichesSection() {
                   </div>
                 </div>
 
-                {/* Mobile: painel aparece logo abaixo do card selecionado (acordeão) */}
+                {/* Mobile: painel de mídia/conversa aparece logo abaixo do card selecionado */}
                 {isSelected ? (
                   <div className="lg:hidden">
-                    <DemoPanel niche={niche} />
+                    <SegmentMediaPanel niche={niche} />
                   </div>
                 ) : null}
               </div>
@@ -427,9 +366,9 @@ export function NichesSection() {
           })}
         </div>
 
-        {/* Desktop: painel único abaixo do grid */}
+        {/* Desktop: painel único de mídia/conversa abaixo do grid */}
         <div className="mt-6 hidden lg:block">
-          <DemoPanel niche={selectedNiche} />
+          <SegmentMediaPanel niche={selectedNiche} />
         </div>
       </div>
     </section>

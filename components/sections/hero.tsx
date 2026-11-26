@@ -2,11 +2,9 @@
 
 import React, { useState } from "react";
 import { LazyMotion, domAnimation, m, useReducedMotion } from "motion/react";
-import { ArrowRight, Compass, FileCheck2, MessageCircle, MousePointerClick, ShieldCheck } from "lucide-react";
+import { ArrowRight, MessageCircle, MousePointerClick } from "lucide-react";
 import { siteConfig, waLink } from "@/lib/site";
 import { track } from "@/lib/track";
-
-const PRINCIPLE_ICONS = [Compass, FileCheck2, ShieldCheck];
 
 function IsometricLayers({ reducedMotion }: { reducedMotion: boolean | null }) {
   const [expanded, setExpanded] = useState(false);
@@ -212,13 +210,13 @@ export function Hero() {
         />
 
         <div className="n3-container relative z-10">
-          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
-            {/* Esquerda: Texto e CTAs */}
+          <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-8">
+            {/* Esquerda no desktop / Embaixo no mobile: Texto e CTAs */}
             <m.div
               initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
-              className="lg:col-span-6"
+              className="order-2 lg:order-1 lg:col-span-6"
             >
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-(color:--color-n3-grey)">
@@ -261,33 +259,14 @@ export function Hero() {
                   <span>{siteConfig.hero.secondaryCta}</span>
                 </a>
               </div>
-
-              {/* 3 Princípios (sem métricas falsas) */}
-              <div className="mt-10 grid gap-4 border-t border-(color:--color-n3-line)/80 pt-7 sm:grid-cols-3 sm:gap-5">
-                {siteConfig.hero.principles.map((principle, idx) => {
-                  const Icon = PRINCIPLE_ICONS[idx % PRINCIPLE_ICONS.length];
-                  return (
-                    <div
-                      key={principle}
-                      className="flex items-start gap-2.5 text-sm leading-snug text-(color:--color-n3-grey)"
-                    >
-                      <Icon
-                        className="mt-0.5 h-4 w-4 shrink-0 text-(color:--color-n3-ink)"
-                        aria-hidden="true"
-                      />
-                      <span>{principle}</span>
-                    </div>
-                  );
-                })}
-              </div>
             </m.div>
 
-            {/* Direita: Animação de camadas */}
+            {/* Direita no desktop / Em cima no mobile: Animação de camadas */}
             <m.div
               initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
-              className="lg:col-span-6"
+              className="order-1 lg:order-2 lg:col-span-6"
             >
               <IsometricLayers reducedMotion={prefersReducedMotion} />
             </m.div>

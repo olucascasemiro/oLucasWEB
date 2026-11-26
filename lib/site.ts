@@ -247,7 +247,7 @@ export const siteConfig = {
   },
   about: {
     title: "Quem está por trás das automações",
-    bio: "Sou Lucas Casemiro. [PREENCHER: 2 ou 3 frases sobre quem sou e como comecei com automação]. [PREENCHER: tipo de negócio com que já trabalhei ou que quero atender].",
+    bio: "Sou Lucas Casemiro, especialista em automações e inteligência artificial aplicadas a negócios. Comecei criando fluxos para eliminar tarefas manuais e repetitivas no atendimento e na organização de dados, conectando canais como WhatsApp, planilhas e sistemas internos. Hoje ajudo clínicas, imobiliárias, lojas e empresas de serviços a responder mais rápido e operar com mais previsibilidade.",
     howIWorkTitle: "Como eu trabalho",
     steps: [
       {

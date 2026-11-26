@@ -52,31 +52,6 @@ export function AboutSection() {
               {siteConfig.about.bio}
             </p>
 
-            {/* Como eu trabalho - 3 passos */}
-            <div className="mt-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-(color:--color-n3-ink)">
-                {siteConfig.about.howIWorkTitle}
-              </h3>
-              <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                {siteConfig.about.steps.map((step) => (
-                  <div
-                    key={step.num}
-                    className="rounded-2xl border border-(color:--color-n3-line) bg-(color:--color-n3-page) p-4"
-                  >
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-(color:--color-n3-ink) text-xs font-semibold text-(color:--color-n3-page)">
-                      {step.num}
-                    </span>
-                    <h4 className="mt-3 text-sm font-semibold text-(color:--color-n3-ink)">
-                      {step.title}
-                    </h4>
-                    <p className="mt-1 text-xs leading-relaxed text-(color:--color-n3-grey)">
-                      {step.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Princípios */}
             <div className="mt-8">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-(color:--color-n3-ink)">
@@ -96,23 +71,6 @@ export function AboutSection() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Ferramentas */}
-            <div className="mt-8">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-(color:--color-n3-ink)">
-                {siteConfig.about.toolsTitle}
-              </h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {siteConfig.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border border-(color:--color-n3-line) bg-(color:--color-n3-page) px-3.5 py-1.5 text-xs font-medium text-(color:--color-n3-ink)"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
             </div>
 
             {/* Links de contato condicionais */}
