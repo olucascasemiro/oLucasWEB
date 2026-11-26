@@ -192,7 +192,7 @@ export function Hero() {
     <LazyMotion features={domAnimation}>
       <section
         id="top"
-        className="relative flex min-h-[calc(100dvh-var(--n3-nav-space,72px))] items-center overflow-hidden bg-white/55 py-12 sm:py-16 lg:py-20"
+        className="relative flex min-h-[calc(100dvh-var(--n3-nav-space,72px))] items-center overflow-hidden bg-white/55 py-8 sm:py-10 lg:py-12"
       >
         {/* Background quadriculado branco com linhas finas atrás */}
         <div

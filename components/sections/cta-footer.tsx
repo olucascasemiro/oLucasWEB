@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
 import { siteConfig, waLink } from "@/lib/site";
 import { track } from "@/lib/track";
 
@@ -11,9 +12,10 @@ export function CtaFooter() {
 
   return (
     <>
-      <section id="contato" className="py-16 sm:py-20">
+      <section id="contato" className="py-10 sm:py-12 lg:py-14">
         <div className="n3-container">
-          <div className="rounded-3xl bg-(color:--color-n3-ink) px-7 py-12 text-center text-(color:--color-n3-page) shadow-sm sm:px-12 sm:py-16">
+          <Reveal>
+            <div className="rounded-3xl bg-(color:--color-n3-ink) px-7 py-10 text-center text-(color:--color-n3-page) shadow-sm sm:px-12 sm:py-14">
             <h2 className="mx-auto max-w-2xl text-2xl font-semibold tracking-tight sm:text-4xl">
               {siteConfig.cta.title}
             </h2>
@@ -32,7 +34,8 @@ export function CtaFooter() {
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
