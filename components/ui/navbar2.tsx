@@ -8,6 +8,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { siteConfig, waLink } from "@/lib/site";
 import { track } from "@/lib/track";
+import { getVisibleTestimonials } from "@/src/data/testimonials";
 
 type MegaColumn = {
   eyebrow: string;
@@ -53,11 +54,16 @@ const MEGA_MENUS: Record<string, MegaMenu> = {
   Segmentos: SEGMENTS_MENU,
 };
 
+const hasTestimonials = getVisibleTestimonials().length > 0;
+
 const NAV_ITEMS = [
-  { label: "Segmentos", hasMenu: true },
-  { label: "Fluxo", hasMenu: false, href: "#fluxo" },
+  { label: "Segmentos", hasMenu: true, href: "#nichos" },
+  { label: "Como funciona", hasMenu: false, href: "#como-funciona" },
+  ...(hasTestimonials
+    ? [{ label: "Depoimentos", hasMenu: false, href: "#depoimentos" }]
+    : []),
   { label: "Sobre", hasMenu: false, href: "#sobre" },
-  { label: "Como trabalho", hasMenu: false, href: "#como-funciona" },
+  { label: "FAQ", hasMenu: false, href: "#faq" },
 ] as const;
 
 export default function Navbar2() {

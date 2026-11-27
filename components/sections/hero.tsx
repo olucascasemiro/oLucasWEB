@@ -172,8 +172,8 @@ function IsometricLayers({ reducedMotion }: { reducedMotion: boolean | null }) {
         </div>
       </div>
 
-      {/* Legenda discreta abaixo */}
-      <p className="mt-1 inline-flex items-center gap-1.5 text-xs text-(color:--color-n3-grey)">
+      {/* Legenda discreta abaixo — oculta no mobile */}
+      <p className="mt-1 hidden items-center gap-1.5 text-xs text-(color:--color-n3-grey) sm:inline-flex">
         <MousePointerClick className="h-3.5 w-3.5 text-(color:--color-n3-accent)" aria-hidden="true" />
         <span>
           {expanded
@@ -238,30 +238,37 @@ export function Hero() {
                 {siteConfig.hero.subtitle}
               </p>
 
+              {/* Linha de prova curta e verdadeira */}
+              <p className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-(color:--color-n3-ink)">
+                <span className="h-1.5 w-1.5 rounded-full bg-(color:--color-n3-accent)" aria-hidden="true" />
+                <span>Atendimento 24h no WhatsApp para clínicas e consultórios</span>
+              </p>
+
               {/* CTAs */}
               <div className="mt-8 flex flex-wrap items-center gap-3.5">
                 <a
-                  href={siteConfig.hero.primaryHref}
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-(color:--color-n3-accent) px-6 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:brightness-105 sm:text-base"
-                >
-                  <span>{siteConfig.hero.primaryCta}</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </a>
-
-                <a
-                  href={waLink("Oi Lucas, vim pelo seu portfólio e quero conversar sobre automação.")}
+                  href={waLink("Oi Lucas, quero agendar um diagnóstico gratuito para meu negócio.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => track("whatsapp_click", { origin: "hero" })}
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-(color:--color-n3-accent) px-6 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:brightness-105 sm:text-base"
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  <span>Agendar diagnóstico gratuito</span>
+                </a>
+
+                <a
+                  href="#como-funciona"
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-(color:--color-n3-line) bg-white px-6 text-sm font-medium text-(color:--color-n3-ink) shadow-2xs transition-colors hover:border-(color:--color-n3-ink) sm:text-base"
                 >
-                  <MessageCircle className="h-4 w-4 text-(color:--color-n3-grey)" aria-hidden="true" />
-                  <span>{siteConfig.hero.secondaryCta}</span>
+                  <span>Ver como funciona</span>
+                  <ArrowRight className="h-4 w-4 text-(color:--color-n3-grey)" aria-hidden="true" />
                 </a>
               </div>
             </m.div>
 
             {/* Direita no desktop / Em cima no mobile: Animação de camadas */}
+            {/* TODO: substituir ou complementar com foto do Lucas ou GIF/vídeo curto de uma conversa real */}
             <m.div
               initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}

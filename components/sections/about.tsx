@@ -2,22 +2,25 @@ import React from "react";
 import fs from "node:fs";
 import path from "node:path";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
-import { siteConfig, waLink } from "@/lib/site";
+import { waLink } from "@/lib/site";
+
+const TOOLS = [
+  "n8n",
+  "WhatsApp Business API",
+  "Google Sheets",
+  "Integrações & Webhooks",
+  "Agentes de IA",
+];
 
 export function AboutSection() {
   const photoExists = fs.existsSync(
     path.join(process.cwd(), "public", "lucas.jpg")
   );
 
-  const hasContactLinks =
-    Boolean(siteConfig.contact.whatsapp) ||
-    Boolean(siteConfig.contact.instagram) ||
-    Boolean(siteConfig.contact.linkedin) ||
-    Boolean(siteConfig.contact.email);
-
   return (
-    <section id="sobre" className="py-10 sm:py-12 lg:py-14">
+    <section id="sobre" className="py-14 sm:py-16 lg:py-20">
       <div className="n3-container">
         <Reveal>
           <div className="grid gap-8 rounded-3xl border border-(color:--color-n3-line) bg-white p-6 shadow-sm sm:p-10 lg:grid-cols-12 lg:gap-12 lg:p-12">
@@ -27,10 +30,10 @@ export function AboutSection() {
                 <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl border border-(color:--color-n3-line) bg-(color:--color-n3-page)">
                   <Image
                     src="/lucas.jpg"
-                    alt="Lucas Casemiro"
+                    alt="Lucas Casemiro, especialista em automações e inteligência artificial"
                     fill
                     sizes="(max-width: 1024px) 100vw, 420px"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
               ) : (
@@ -45,57 +48,54 @@ export function AboutSection() {
 
             {/* Texto */}
             <div className="flex flex-col justify-center lg:col-span-7">
-              <h2 className="text-2xl font-semibold tracking-tight text-(color:--color-n3-ink) sm:text-4xl">
-                {siteConfig.about.title}
+              <p className="text-xs font-semibold uppercase tracking-wider text-(color:--color-n3-accent)">
+                Sobre
+              </p>
+              <h2 className="mt-1.5 text-2xl font-semibold tracking-tight text-(color:--color-n3-ink) sm:text-4xl">
+                Quem está por trás das automações
               </h2>
 
-              <p className="mt-4 text-base leading-relaxed text-(color:--color-n3-grey) sm:text-lg">
-                {siteConfig.about.bio}
-              </p>
+              <div className="mt-4 space-y-3.5 text-base leading-relaxed text-(color:--color-n3-grey)">
+                <p>
+                  Sou Lucas Casemiro, especialista em automações de atendimento e inteligência artificial aplicadas a negócios em São Paulo.
+                </p>
+                <p>
+                  Comecei criando fluxos para eliminar tarefas manuais e repetitivas no atendimento e na organização de dados, conectando canais como WhatsApp, planilhas e sistemas internos.
+                </p>
+                <p>
+                  Hoje ajudo clínicas, consultórios e empresas de serviços a responder mais rápido, organizar contatos e operar com previsibilidade — sem substituir a equipe humana.
+                </p>
+              </div>
 
-              {/* Links de contato condicionais */}
-              {hasContactLinks ? (
-                <div className="mt-7 flex flex-wrap gap-3 border-t border-(color:--color-n3-line) pt-6 text-sm font-medium">
-                  {siteConfig.contact.whatsapp ? (
-                    <a
-                      href={waLink("Oi Lucas, vim pelo seu portfólio.")}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-11 items-center rounded-full border border-(color:--color-n3-line) px-4 text-(color:--color-n3-ink) hover:border-(color:--color-n3-ink)"
+              <div className="mt-6">
+                <p className="text-xs font-semibold uppercase tracking-wider text-(color:--color-n3-grey)">
+                  Ferramentas que domino
+                </p>
+                <div className="mt-2.5 flex flex-wrap gap-2">
+                  {TOOLS.map((tool) => (
+                    <span
+                      key={tool}
+                      className="rounded-full border border-(color:--color-n3-line) bg-(color:--color-n3-page) px-3 py-1 text-xs font-medium text-(color:--color-n3-ink)"
                     >
-                      WhatsApp
-                    </a>
-                  ) : null}
-                  {siteConfig.contact.instagram ? (
-                    <a
-                      href={siteConfig.contact.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-11 items-center rounded-full border border-(color:--color-n3-line) px-4 text-(color:--color-n3-ink) hover:border-(color:--color-n3-ink)"
-                    >
-                      Instagram
-                    </a>
-                  ) : null}
-                  {siteConfig.contact.linkedin ? (
-                    <a
-                      href={siteConfig.contact.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-11 items-center rounded-full border border-(color:--color-n3-line) px-4 text-(color:--color-n3-ink) hover:border-(color:--color-n3-ink)"
-                    >
-                      LinkedIn
-                    </a>
-                  ) : null}
-                  {siteConfig.contact.email ? (
-                    <a
-                      href={`mailto:${siteConfig.contact.email}`}
-                      className="inline-flex min-h-11 items-center rounded-full border border-(color:--color-n3-line) px-4 text-(color:--color-n3-ink) hover:border-(color:--color-n3-ink)"
-                    >
-                      E-mail
-                    </a>
-                  ) : null}
+                      {tool}
+                    </span>
+                  ))}
                 </div>
-              ) : null}
+              </div>
+
+              {/* TODO: adicionar credenciais ou certificados reais quando disponíveis */}
+
+              <div className="mt-7 border-t border-(color:--color-n3-line) pt-5">
+                <a
+                  href={waLink("Oi Lucas, li sobre o seu trabalho e quero conversar sobre uma automação.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-(color:--color-n3-ink) underline decoration-(color:--color-n3-accent) decoration-2 underline-offset-4 hover:opacity-80"
+                >
+                  <span>Conversar diretamente com o Lucas</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>
